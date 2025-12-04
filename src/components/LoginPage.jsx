@@ -60,7 +60,7 @@ const LoginPage = () => {
       await setDoc(doc(db, "users", newUser.uid), {
         username,
         bio: "",
-        profilepic: "296fe121-5dfa-43f4-98b5-db50019738a7.jpg",
+        profilepic: "/296fe121-5dfa-43f4-98b5-db50019738a7.jpg",
         createdAt: new Date(),
         uuid: newUser.uid,
         email,
