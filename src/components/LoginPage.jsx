@@ -23,6 +23,7 @@ const LoginPage = () => {
       if (userSnap.exists()) console.log("✅ Login:", userSnap.data());
     } catch (error) {
       console.error("❌ Login failed:", error.message);
+      alert("Oops! The details don’t match our records. Please try again.")
     }
   };
 
@@ -32,6 +33,19 @@ const LoginPage = () => {
     const email = e.target.email.value.trim();
     const password = e.target.password.value.trim();
     const usernameInput = e.target.username.value.trim();
+
+    if(!email){
+      alert("invaild email");
+      return;
+    }
+    if(!usernameInput){
+      alert("Enter your name");
+      return;
+    }
+    if(!password){
+      alert("creat password");
+      return;
+    }
 
     if (!email || !password || !usernameInput) return;
 
@@ -55,6 +69,7 @@ const LoginPage = () => {
       console.log("✅ Signup complete");
     } catch (error) {
       console.error("❌ Signup failed:", error.message);
+      alert("Invalid credentials...")
     }
   };
 
