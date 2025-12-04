@@ -1,223 +1,202 @@
-
 :root {
+  --blue:#007aff;
+  --blue-hover:#0056b3;
+  --glass:rgba(255,255,255,0.55);
+  --dark:#121212;
+  --light:#ffffff;
+  --muted:rgba(255,255,255,0.85);
+  --border:rgba(0,0,0,0.15);
+}
 
-  --color-blue-top: #0076e0;
-  --color-blue-bottom: #00aaff;
-  
-  --color-primary-blue: #007aff; 
-  --color-text-light: #ffffff;
-  --color-text-secondary: rgba(255, 255, 255, 0.85); 
-  
-  --color-background-form: rgba(255, 255, 255, 0.95); 
-  --color-border-form: rgba(0, 0, 0, 0.1); 
-  
-  --color-input-focus: #007aff;
-  --color-hover-blue: #0056b3;
-  --color-text-dark: #121212; 
-  cursor: pointer;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,body{
+  width:100%;
+  overflow-x:hidden;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+}
+
+/* Page */
+.mainloginpage{
+  min-height:100vh;
+  width:100%;
+  background:url("/hero-clouds.jpg") center/cover fixed;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:16px;
+}
+
+/* Intro */
+.introContainer{
+  max-width:460px;
+  width:100%;
+  color:#fff;
+  text-align:center;
+}
+
+.logo{
+  font-family:'Billabong','Pacifico',cursive;
+  font-size:42px;
+  font-weight:900;
+}
+
+.welcomeText{
+  margin-top:18px;
+  font-size:2.5rem;
+}
+
+.welcomeText span{
+  font-weight:700;
+}
+
+.introText{
+  margin-top:18px;
+  line-height:1.6;
+  color:var(--muted);
+}
+
+.highlight{
+  color:#fff;
+  font-weight:600;
+}
+
+.buttonGroup{
+  margin-top:40px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  justify-content:center;
+}
+
+.switchBtn{
+  border:none;
+  background:var(--blue);
+  padding:12px 20px;
+  border-radius:10px;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.switchBtn:hover{
+  background:var(--blue-hover);
+}
+
+/* Forms */
+.formContainer{
+  background:var(--glass);
+  backdrop-filter:blur(12px);
+  padding:28px 22px;
+  width:100%;
+  max-width:380px;
+  border-radius:16px;
+  box-shadow:0 12px 40px rgba(0,0,0,.2);
+}
+
+.formContainer h2{
+  text-align:center;
+  font-size:1.7rem;
+  margin-bottom:22px;
+  color:var(--dark);
+}
+
+/* Inputs */
+.inputWrapper{
+  background:#fff !important;
+  border-radius:10px;
+  border:1px solid var(--border);
+  margin-bottom:16px;
+  position:relative;
+}
+
+.inputWrapper:focus-within{
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(0,122,255,.18);
+}
+
+.inputWrapper input{
+  width:100%;
+  background:#fff !important;
+  border:none;
+  padding:12px 14px;
+  font-size:1rem;
+  outline:none;
+  border-radius:10px;
+  color:#121212 !important;
 }
 
 
-.mainloginpage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  width: 100%;
-  
-  background-image:url("/hero-clouds.jpg");
-  background-attachment: fixed;
-  
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  padding: 20px;
-  box-sizing: border-box;
+.suffix{
+  position:absolute;
+  right:12px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#999;
+  pointer-events:none;
 }
 
+/* Chrome autofill fix */
 
-.introContainer {
-  max-width: 450px; 
-  width: 100%;
-  padding: 0;
-  text-align: center;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+  -webkit-box-shadow:0 0 0 1000px white inset !important;
+  box-shadow:0 0 0 1000px white inset !important;
+  -webkit-text-fill-color:#121212 !important;
+  caret-color:#121212 !important;
+  transition:background-color 5000s ease-in-out 0s;
 }
 
-.skyTitle {
-  /* Hiding the 'sky' title as the image shows 'Bluesky' logo elsewhere, 
-     but keeping the styles in case you want to use it */
-  font-size: 3rem;
-  font-weight: 900;
-  color: var(--color-text-light); /* White title */
-  margin-bottom: 5px;
-  text-transform: lowercase;
-  display: none; /* Hide if you are using a logo */
+/* Buttons */
+.submitBtn{
+  margin-top:4px;
+  width:100%;
+  border:none;
+  border-radius:12px;
+  padding:13px;
+  font-size:1.1rem;
+  font-weight:700;
+  background:var(--blue);
+  color:white;
+  cursor:pointer;
+  transition:.2s;
 }
 
-.welcomeText {
-  font-size: 2.5rem; /* Larger font size to match the image impact */
-  font-weight: 300;
-  line-height: 1.2;
-  color: var(--color-text-light); /* White text */
-  margin-bottom: 25px;
+.submitBtn:hover{
+  background:var(--blue-hover);
 }
 
-.welcomeText span {
-  font-weight: 600;
-
-  color: var(--color-text-light); 
+/* Switch text */
+.switchText{
+  margin-top:16px;
+  font-size:.9rem;
+  text-align:center;
+  color:var(--dark);
 }
 
-.introText {
-  font-size: 1.1rem; /* Slightly larger text */
-  color: var(--color-text-secondary); /* Subdued white */
-  line-height: 1.5;
-  margin-bottom: 40px;
-  max-width: 350px;
-  margin-left: auto;
-  margin-right: auto;
-
+.linkText{
+  color:var(--blue);
+  font-weight:600;
+  cursor:pointer;
 }
 
-.highlight {
-  font-weight: 600;
-  color: var(--color-text-light);
+.linkText:hover{
+  text-decoration:underline;
 }
 
-.buttonGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 50px;
-}
-
-
-.formContainer {
-  max-width: 350px;
-  width: 100%;
-  padding: 25px;
-  
-  background-color: rgba(215, 212, 212, 0.5);
-
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); 
-}
-
-.formContainer h2 {
-  text-align: center;
-  color: var(--color-text-dark); 
-  margin-bottom: 25px;
-  font-size: 1.6rem;
-  font-weight: 600;
-}
-
-
-.inputWrapper {
-  position: relative;
-  margin-bottom: 20px;
-
-  border: 1px solid var(--color-border-form);
-  border-radius: 8px;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  background-color: white; 
-}
-
-.inputWrapper:focus-within {
-  border-color: var(--color-input-focus);
-  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
-}
-
-.inputWrapper input {
-  width: 100%;
-  padding: 12px 15px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  
-  outline: none;
-  box-sizing: border-box;
-  background-color: transparent; 
-}
-
-.inputWrapper input::placeholder {
-  color: var(--color-text-dark);
-  opacity: 0.4; 
-}
-
-.suffix {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--color-text-dark);
-  font-size: 1rem;
-  pointer-events: none;
-  font-weight: 500;
-  opacity: 0.6;
-}
-
-
-.submitBtn, .switchBtn {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s, opacity 0.2s;
-}
-
-.switchBtn {
-  background-color: var(--color-primary-blue);
-  color: white;
-}
-
-.submitBtn {
-  background-color: var(--color-primary-blue);
-  color: white;
-  margin-top: 10px;
-}
-
-.switchBtn:active, .submitBtn:active {
-  opacity: 0.85;
-}
-
-.switchBtn:hover, .submitBtn:hover {
-  background-color: var(--color-hover-blue);
-}
-
-/* --- Switch Text --- */
-.switchText {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 0.9rem;
-
-}
-
-.linkText {
-  color: var(--color-primary-blue);
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.linkText:hover {
-  text-decoration: underline;
-}
-
-/* 💻 Media Query for Desktop/Tablet Screens (≥ 600px) */
-@media (min-width: 600px) {
-  /* Intro View Adjustments */
-  .introContainer {
-    padding: 60px 40px;
+/* Mobile */
+@media(max-width:450px){
+  .welcomeText{
+    font-size:2.2rem;
   }
-  .welcomeText {
-    font-size: 3rem;
-  }
-  .buttonGroup {
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-  }
-  .switchBtn {
-    width: 45%;
+  .buttonGroup{
+    flex-direction:column;
   }
 }
