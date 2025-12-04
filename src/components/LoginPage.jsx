@@ -144,7 +144,7 @@ const LoginPage = () => {
               />
             </div>
 
-            <div className={styles.inputWrapper}>
+            <div className={styles.inputWrapper} style={{backgroundColor:"white"}}>
               <input
                 type="text"
                 name="username"
