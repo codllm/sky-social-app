@@ -1,0 +1,77 @@
+.profile_overlay{
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 99999;
+  overflow-y: auto;
+}
+
+/* Close */
+.close_btn{
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 999999;
+}
+
+/* Main page */
+.profile_page{
+  padding: 60px 10px 80px;
+  text-align: center;
+}
+
+/* Header */
+.profile_header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+/* Profile image */
+.profile_pic{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #ff006a;
+  object-fit: cover;
+}
+
+/* Text */
+.profile_username{
+  color: white;
+  margin: 10px 0 5px;
+}
+
+.profile_bio{
+  color: #d9d9d9;
+  max-width: 280px;
+  margin: 6px auto;
+  font-size: 14px;
+}
+
+.profile_link{
+  color: #1da1f2;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* Posts grid */
+.profile_posts{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+
+/* Grid image */
+.post_img{
+  width: 90%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  cursor: pointer;
+}

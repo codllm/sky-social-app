@@ -1,0 +1,98 @@
+/* ---------- Root Layout ---------- */
+.appContainer {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f9fb;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ---------- Flex Layout When Logged In ---------- */
+.loggedInLayout {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebarContainer {
+  width: 260px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  border-right: 1px solid #e5e5e5;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ---------- Main Content ---------- */
+.mainContent {
+  flex: 1;
+  background-color: #f8f9fb;
+  padding: 30px;
+  min-height: 100vh;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+/* ---------- Scrollbar Styling ---------- */
+.mainContent::-webkit-scrollbar {
+  width: 8px;
+}
+.mainContent::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.mainContent::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- Centered Login Page ---------- */
+.loginPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #0073ff, #00c6ff);
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 900px) {
+  .sidebarContainer {
+    width: 80px;
+    padding: 20px 10px;
+  }
+
+  .mainContent {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .loggedInLayout {
+    flex-direction: column;
+  }
+
+  .sidebarContainer {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    box-shadow: none;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
+
+  .mainContent {
+    padding: 15px;
+  }
+}

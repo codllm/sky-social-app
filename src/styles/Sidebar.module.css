@@ -1,0 +1,192 @@
+/* ================= DESKTOP SIDEBAR ================= */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 230px;
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 10px;
+  border-right: 1px solid #222;
+  box-sizing: border-box;
+  z-index: 2000;
+  transition: all 0.2s ease;
+}
+
+/* list */
+.sidebar_content {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav_item {
+  margin: 8px 0;
+}
+
+.nav_link {
+  background: none;
+  border: none;
+  color: #fff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.nav_link:hover {
+  background: #111;
+}
+
+.active {
+  color: #ffd700;
+  background: #111;
+}
+
+.sidebar_icon {
+  font-size: 1.4rem;
+}
+
+.nav_text {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Divider + bottom profile */
+.divider {
+  border: none;
+  border-top: 1px solid #222;
+  margin: 10px 0;
+}
+
+.profile_section {
+  padding: 10px;
+}
+
+.profile_link {
+  background: none;
+  border: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 12px;
+  padding: 8px 10px;
+}
+
+.profile_img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.profile_name {
+  font-size: 0.9rem;
+}
+
+/* mobile profile button inside nav */
+.profilefor_small_scrren {
+  display: none;
+}
+
+/* ================= MOBILE NAVIGATION ================= */
+
+@media (max-width: 768px) {
+
+  /* BOTTOM BAR */
+  .sidebar {
+    position: fixed !important;
+    bottom: 0 !important;
+    top: auto !important;
+    width: 100% !important;
+    height: 62px !important;
+    border-top: 1px solid #222 !important;
+    border-right: none !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    padding: 0 !important;
+    background: #000 !important;
+
+    z-index: 3000 !important;
+  }
+
+  /* GRID FOR PERFECT SPACING */
+  .sidebar_content {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    align-items: center !important;
+    justify-items: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Hide ALL default nav buttons */
+  .nav_item {
+    display: none !important;
+  }
+
+  /* Show only allowed icons */
+  .nav_item:nth-of-type(1),   /* Home */
+  .nav_item:nth-of-type(3),   /* Notification */
+  .nav_item:nth-of-type(5) { /* Create Post */
+    display: flex !important;
+    margin: 0 !important;
+  }
+
+  /* Convert nav buttons to icons only */
+  .nav_link {
+    padding: 0 !important;
+    background: none !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column !important;
+  }
+
+  .sidebar_icon {
+    font-size: 22px !important;
+  }
+
+  .nav_text {
+    display: none !important;
+  }
+
+  /* DESKTOP profile hidden */
+  .profile_section {
+    display: none !important;
+  }
+
+  /* SHOW MOBILE PROFILE ICON */
+  .profilefor_small_scrren {
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .profile_link {
+    padding: 0 !important;
+    flex-direction: column !important;
+  }
+
+  .profile_img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .profile_name {
+    display: none !important;
+  }
+
+}

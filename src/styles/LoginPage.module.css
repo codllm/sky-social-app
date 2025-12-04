@@ -1,0 +1,224 @@
+/* Variables for easy color changes */
+:root {
+  /* Bluesky Gradient Colors */
+  --color-blue-top: #0076e0;
+  --color-blue-bottom: #00aaff;
+  
+  --color-primary-blue: #007aff; /* Consistent blue for accents */
+  --color-text-light: #ffffff; /* Primary text color (WHITE) */
+  --color-text-secondary: rgba(255, 255, 255, 0.85); /* Slightly transparent white for secondary info */
+  
+  --color-background-form: rgba(255, 255, 255, 0.95); /* Nearly white, slightly transparent form background */
+  --color-border-form: rgba(0, 0, 0, 0.1); /* Subtle dark border for white box */
+  
+  --color-input-focus: #007aff;
+  --color-hover-blue: #0056b3;
+  --color-text-dark: #121212; /* Dark text for elements on the white form */
+  cursor: pointer;
+}
+
+/* --- Global Reset & Main Container (Gradient Background) --- */
+.mainloginpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  
+  /* --- The Key Change: Gradient Background --- */
+background-image:url("hero-clouds.jpg");
+  background-attachment: fixed; /* Optional: Makes the gradient stay put when scrolling */
+  
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* --- Intro View Styling (Matches Image) --- */
+.introContainer {
+  max-width: 450px; /* Slightly wider for better text flow */
+  width: 100%;
+  padding: 0;
+  text-align: center;
+}
+
+.skyTitle {
+  /* Hiding the 'sky' title as the image shows 'Bluesky' logo elsewhere, 
+     but keeping the styles in case you want to use it */
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--color-text-light); /* White title */
+  margin-bottom: 5px;
+  text-transform: lowercase;
+  display: none; /* Hide if you are using a logo */
+}
+
+.welcomeText {
+  font-size: 2.5rem; /* Larger font size to match the image impact */
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--color-text-light); /* White text */
+  margin-bottom: 25px;
+}
+
+.welcomeText span {
+  font-weight: 600;
+  /* The "social internet" text is also white in the image */
+  color: var(--color-text-light); 
+}
+
+.introText {
+  font-size: 1.1rem; /* Slightly larger text */
+  color: var(--color-text-secondary); /* Subdued white */
+  line-height: 1.5;
+  margin-bottom: 40px;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  /* Ensure this block sits within a semi-transparent white card if you want the exact look */
+}
+
+.highlight {
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 50px; /* Add space below the large text block */
+}
+
+/* --- Form View Styling (White Card with Dark Text) --- */
+.formContainer {
+  max-width: 350px;
+  width: 100%;
+  padding: 25px;
+  /* White card with slight transparency and a soft shadow */
+  background-color: rgba(215, 212, 212, 0.5);
+
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); 
+}
+
+.formContainer h2 {
+  text-align: center;
+  color: var(--color-text-dark); /* Dark text on white background */
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* --- Input and Container Styling (Optimized for White Card) --- */
+.inputWrapper {
+  position: relative;
+  margin-bottom: 20px;
+  /* Soft border on the white background */
+  border: 1px solid var(--color-border-form);
+  border-radius: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: white; /* Explicitly white input background */
+}
+
+.inputWrapper:focus-within {
+  border-color: var(--color-input-focus);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2); /* Softer focus ring */
+}
+
+.inputWrapper input {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  
+  outline: none;
+  box-sizing: border-box;
+  background-color: transparent; 
+}
+
+.inputWrapper input::placeholder {
+  color: var(--color-text-dark);
+  opacity: 0.4; /* Very light placeholder text */
+}
+
+.suffix {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-dark); /* Dark suffix text */
+  font-size: 1rem;
+  pointer-events: none;
+  font-weight: 500;
+  opacity: 0.6;
+}
+
+/* --- Button Styling (Stays Consistent) --- */
+.submitBtn, .switchBtn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+.switchBtn {
+  background-color: var(--color-primary-blue);
+  color: white;
+}
+
+.submitBtn {
+  background-color: var(--color-primary-blue);
+  color: white;
+  margin-top: 10px;
+}
+
+.switchBtn:active, .submitBtn:active {
+  opacity: 0.85;
+}
+
+.switchBtn:hover, .submitBtn:hover {
+  background-color: var(--color-hover-blue);
+}
+
+/* --- Switch Text --- */
+.switchText {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--color-text-dark); /* Dark text on white card */
+}
+
+.linkText {
+  color: var(--color-primary-blue);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.linkText:hover {
+  text-decoration: underline;
+}
+
+/* 💻 Media Query for Desktop/Tablet Screens (≥ 600px) */
+@media (min-width: 600px) {
+  /* Intro View Adjustments */
+  .introContainer {
+    padding: 60px 40px;
+  }
+  .welcomeText {
+    font-size: 3rem;
+  }
+  .buttonGroup {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+  .switchBtn {
+    width: 45%;
+  }
+}

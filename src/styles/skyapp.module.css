@@ -1,0 +1,76 @@
+.app_open_state {
+  display: flex;
+  background-color: #000;
+  min-height: 100vh;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Sidebar */
+.sidebar_state {
+  width: 230px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* MAIN CONTENT */
+.content_wrapper {
+  flex: 1;
+  margin-left: 230px;
+  display: flex;
+  justify-content: center;
+  background: #000;
+  min-height: 100vh;
+}
+
+/* FEED / PROFILE WIDTH */
+.home_state,
+.creatpost_state,
+.profile_state {
+  width: 100%;
+  max-width: 980px;   /* ✅ MUCH WIDER FOR LAPTOP */
+  margin: auto;
+  background: #000;
+  border-left: 1px solid #1f1f22;
+  border-right: 1px solid #1f1f22;
+  min-height: 100vh;
+}
+
+/* LOADER */
+.loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px) {
+
+  .sidebar_state {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: auto;
+    height: 60px;
+    width: 100%;
+    z-index: 3000;
+  }
+
+  .content_wrapper {
+    margin-left: 0;
+    padding-bottom: 80px !important;
+  }
+
+  .home_state,
+  .creatpost_state,
+  .profile_state {
+    max-width: 100% !important;
+    border: none !important;
+  }
+}

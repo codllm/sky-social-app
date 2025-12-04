@@ -1,0 +1,103 @@
+/* ================= MAIN APP LAYOUT ================= */
+
+.app_open_state {
+  display: flex;
+  background-color: #000;
+  min-height: 100vh;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* ================= SIDEBAR ================= */
+
+.sidebar_state {
+  width: 230px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+
+/* ================= CONTENT ================= */
+
+.content_wrapper {
+  flex: 1;
+  margin-left: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #000;
+  min-height: 100vh;
+  padding-bottom: 0;
+  transition: margin 0.18s ease;
+}
+
+
+/* ================= CENTER FEED ================= */
+
+.home_state,
+.creatpost_state,
+.profile_state {
+  width: 100%;
+  max-width: 600px;
+  background: #000;
+
+
+  /*✅ THIS solves overlap problem */
+  min-height: calc(100vh + 80px);
+}
+
+
+
+/* ================= LOADER ================= */
+
+.loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+
+
+/* ================= MOBILE LAYOUT ================= */
+
+@media (max-width: 768px) {
+
+  /* Sidebar becomes bottom bar */
+  .sidebar_state {
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 3000;
+  }
+
+
+  /* Remove desktop spacing + reserve navbar area */
+  .content_wrapper {
+    margin-left: 0;
+    padding-bottom: 90px !important;
+  }
+
+
+  /* Full-width feed + remove borders */
+  .home_state,
+  .creatpost_state,
+  .profile_state {
+    max-width: 100%;
+    border: none;
+
+    /*✅ FORCE scroll beyond navbar */
+    min-height: calc(100vh + 110px);
+  }
+
+}
